@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mecanica Benny's - Império RolePlay</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/functions.js?v=1.1"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
+</head>
+<body>
+<button type="button" class="btn btn-outline-secondary darkModeBtn" onclick="darkMode()">
+    <span class="bi bi-moon"></span>
+</button>
+<div class="resize">
+<div class="col-sm-12 text-center">
+    <img src="assets/img/logo.png " alt="Império Klaus (Supervisor)" class="img-fluid"/>
+</div>
+<div class="col-sm-12 text-center">
+<div class="row mx-auto" style="justify-content: center;width: 80.4%;;height: 70%;
+    text-align: initial;">
+    <div class="card bg-dark mt-3 col-sm-3 text-center" id="cardBg" style="
+       border-radius: 0.9rem;
+        margin-bottom: 1%;
+           width: auto;
+               padding-top: 10px;
+    padding-bottom: 10px;
+">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button id="novoCliente" name="novoCliente" class="btn btn-primary btn-lg center-block" Style="width: 100px;"  >Novo cliente</button>
+                <button id="painel" name="painel" class="btn btn-success btn-lg center-block" Style="width: 100px;" >Gerar Painel</button>
+                <button id="zerarPainel" name="zerarPainel" class="btn btn-danger btn-lg center-block" Style="width: 100px;" >Zerar Painel </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card bg-dark" id="cardBg2" style="
+ display: -webkit-box;
+    border-radius: 0.9rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+">
+    <div class="col-lg-3 col-sm-2 col-md-4 p-3 ml-100 right rounded" style="background-color:#204A6E;">
+        <div class="form-group">
+            <legend class="titulo">Estética: <span style="
+    float: right;
+">QTD</span></legend>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="aerofolio" value="10000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="aerofolio">AeroFólio</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="parachoqued" value="10000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="parachoqued">Parachoque - dianteiro</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="parachoquet" value="10000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="parachoquet">Parachoque - traseiro</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="paralama" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="paralama">Paralamas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="capo" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="capo">Capô</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="grelhas" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="grelhas">Grelhas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="chassi" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="chassi">Chassi</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="saia" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="saia">Saias</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="escape" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="escape">Escapamento</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="teto" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="teto">Teto</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="fume" value="8000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="fume">Vidro Fumê</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="placa" value="5000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="placa">Placa</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="buzina" value="5000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="buzina">Buzina</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="rodas" value="25000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="rodas">Rodas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="corRodas" value="6000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="corRodas">Cor das rodas</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="pneus" value="6000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="pneus">Pneus Customs</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="fumaca" value="5000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="fumaca">Fumaça do Pneu</label>
+            </div>
+            <div class="form-check" style="margin-bottom: 3.6%";>
+                <input class="form-check-input tunning calcQtd" type="checkbox" name="value" id="interior" value="15000"/>
+                <label class="form-check-label" for="interior">Interior</label>
+                <input class="form-control form-control-sm ml-2 w-25 qtd h-25"  type="number" min="1" max="10" style="display: inline;float: right;;">
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="xenon" value="23000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="xenon">Xenon</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input tunning" type="checkbox" name="value" id="neon" value="20000" onclick="updateTotal()"/>
+                <label class="form-check-label" for="neon">Neon</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3  col-sm-2 col-md-3 p-3 ml-100 right rounded cardsBenny" style="background-color:#6699c4;">
+        <div class="form-group">
+            <legend class="titulo">Tunagens:</legend>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="motor1" value="50000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="motor1">Motor 1</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="motor2" value="60000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="motor2">Motor 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="motor3" value="70000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="motor3">Motor 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="motor4" value="90000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="motor4">Motor 4</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="turbo" value="45000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="turbo">Turbo</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="transmissao1" value="60000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="transmissao1">Transmissão 1</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="transmissao2" value="80000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="transmissao2">Transmissão 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="transmissao3" value="100000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="transmissao3">Transmissão 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="freio1" value="25000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="freio1">Freio 1</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="freio2" value="50000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="freio2">Freio 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="freio3" value="75000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="freio3">Freio 3</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="suspensao1" value="10000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="suspensao1">Suspensão 1</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="suspensao2" value="20000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="suspensao2">Suspensão 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="suspensao3" value="35000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="suspensao3">Suspensão 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="suspensao45" value="50000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="suspensao45">Suspensão 4/5</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="fullCarro" value="360000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="fullCarro">Full Tuning Carro</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="fullMoto" value="310000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="fullMoto">Full Tuning Moto</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-2 col-md-3 p-3  right rounded cardsBenny" style="background-color:#4c6275;">
+        <div class="form-group">
+            <legend class="titulo">Pinturas:</legend>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input tunning tunning" type="checkbox" name="value" id="primariaCromado" value="10000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="primariaCromado">Primária / Cromado</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning tunning" type="checkbox" name="value" id="primariaFosco" value="8000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="primariaFosco">Primária / Fosco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="primariaMetalica" value="7000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="primariaFosco">Primária / Metálica</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="primariaMetal" value="6000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="primariaMetal">Primária / Metal</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="secundariaCromado" value="10000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="secundariaCromado">Secundária / Cromado</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="secundariaFosco" value="8000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="secundariaFosco">Secundária / Fosco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="secundariaMetalica" value="8000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="secundariaMetalica">Secundária / Metálica</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="secundariaMetal" value="8000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="secundariaMetal">Secundária / Metal</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input tunning" type="checkbox" name="value" id="secundariaDecal" value="10000" onclick="updateTotal()"/>
+                    <label class="form-check-label" for="secundariaDecal">Pintura Decal</label>
+                </div>
+                <hr>
+                <legend class="titulo">Reparos de Carros: <span style="
+    float: right";>KM</span>
+</legend>
+                <div class="col-md-12">
+                <div class="form-check" style="margin-bottom: 3.6%";>
+                    <input class="form-check-input reparo calcQtdReparo" type="checkbox" name="value" id="reparoCarroCons" value="10000" onclick="updateTotal()"/>
+                    <label class="form-check-label textReparo" for="reparoCarroCons">Concessionaria</label>
+                    <input class="form-control form-control-sm w-25 qtd ReparoUmaLinha"     type="number" min="1">
+                    <br>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="form-check" style="margin-bottom: 3.6%";>
+                    <input class="form-check-input reparo calcQtdReparo" type="checkbox" name="value" id="reparoCarroVip" value="10000" onclick="updateTotal()"/>
+                                  <label class="form-check-label textReparo" for="reparoCarroVip">VIP</label>
+                    <input class="form-control form-control-sm w-25 qtd ReparoUmaLinha" type="number" min="1">
+                    <br>
+                </div>
+                </div>
+                <hr>
+                <legend class="titulo">Reparos de Motos: <span style="
+    float: right";>KM</span>
+                </legend>
+                <div class="col-md-12">
+                    <div class="form-check" style="margin-bottom: 3.6%";>
+                        <input class="form-check-input reparo calcQtdReparo" type="checkbox" name="value" id="reparoCarroMoto" value="3500" onclick="updateTotal()"/>
+                        <label class="form-check-label textReparo" for="reparoCarroMoto">Concessionaria</label>
+                        <input class="form-control form-control-sm w-25 qtd ReparoUmaLinha" type="number" min="1">
+                        <br>
+                    </div>
+                    </div>
+                <div class="col-md-12">
+                <div class="form-check" style="margin-bottom: 3.6%";>
+                    <input class="form-check-input reparo calcQtdReparo" type="checkbox" name="value" id="reparoCarroMotoVip" value="8500" onclick="updateTotal()"/>
+                                    <label class="form-check-label textReparo" for="reparoCarroMotoVip">VIP</label>
+                                      <input class="form-control form-control-sm w-25 qtd ReparoUmaLinha" type="number" min="1">
+                    <br>
+
+                                    </div>
+                </div>
+
+
+
+
+                <hr>
+                <legend class="titulo">Kit: <span style="
+    float: right;
+">QTD</span></legend>
+                <div class="form-check">
+                    <div class="clearfix"></div>
+                    <input class="form-check-input kitReparo calcQtdKit" type="checkbox" qtd="0" name="value" id="kitReparo" value="15000" onclick="updateTotal()"/>
+                    <label class="form-check-label " for="kitReparo"> Kit reparo </label>
+                    <input class="form-control form-control-sm w-25 qtd ReparoUmaLinha" type="number" min="1">
+                    <hr style="color: transparent;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-2 col-md-3 p-3 ml-100 right rounded cardsBenny" style="background-color:#a33f46;">
+        <div class="form-group">
+            <legend class="titulo">Descontos:</legend>
+            <div class="form-check">
+                <input class="form-check-input desconto" type="checkbox" id="desconto5" value="5"/>
+                <label class="form-check-label" for="desconto5">Desconto de 5%</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input desconto" type="checkbox"  id="desconto10" value="10"/>
+                <label class="form-check-label" for="desconto10">Desconto de 10%</label>
+            </div>
+            <hr>
+            <legend class="titulo"> Total a pagar:</legend> <span class="total">R$</span>
+            <hr>
+            <legend class="titulo"> Valores painel:</legend>  <span class="totalPainel">R$</span>
+            <hr>
+            <legend class="titulo" style="font-size: 100%"> Criado por
+                <br><a style="text-decoration: none;
+    color: yellowgreen;"; href="https://linktr.ee/flaviomartil">Flávio Martil/Klaus -  flaviomartil#9185</a><legend>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+<div class="hidden" style="display: none">
+    <input class="Rstunning" value="0"></input>
+    <input class="Rsreparo" value="0"></input>
+    <input class="kitReparo" value="0"></input>
+    <input class="totalDesconto" value="0"></input>
+    </div>
+</div>
+</body>
+</html>

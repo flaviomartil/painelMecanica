@@ -1,0 +1,99 @@
+.dark-mode {
+    --body-color: #121212;
+}
+.light-mode {
+    --body-color: #121212;
+}
+:root {
+    --body-color: #F8F8F8;
+}
+.logo {
+    width: auto;
+    height: auto;
+    text-align:center;
+}
+
+.logo img {
+    display:inline-block;
+}
+body {
+    background-color: var(--body-color);
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 60px;
+}
+
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+.textReparo {
+    font-size: 0.8rem;
+
+}
+
+
+
+
+.ReparoUmaLinha {
+    margin-right: -2.4%;
+    margin-top: 1%;
+    display: inline;
+    float: right;
+    width: 22% !important;
+    height: 10% !important;
+    margin-bottom: -4.1%;
+}
+.form-check-label {
+    color: white;
+}
+
+.resize {
+    transform: scale(0.75);
+    transform-origin: top;
+}
+
+
+.titulo {
+    color: white;
+}
+
+.total {
+    color: green;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.totalPainel {
+    color: greenyellow;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#novoCliente {
+    width: 50%;
+    margin-bottom: 0.6%;
+}
+
+#painel {
+    width: 50%;
+    margin-bottom: 0.6%;
+}
+
+#zerarPainel {
+    width: 50%;
+    margin-bottom: 0.6%;
+}
+@media (min-width: 320px) and (max-width: 1022px) {
+    #cardBg2 {
+    padding-right: 77px;
+    }
+    .p-3 {
+        padding: 0.6rem!important;
+}
+}
