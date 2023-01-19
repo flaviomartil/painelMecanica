@@ -24,6 +24,7 @@ function updateTotal() {
             valor = this.value * qtd;
 
         } else if(this.classList.contains('calcQtdReparo')) {
+            console.log('aqui1');
             var porKm = 1000;
             var valor = parseInt(this.value);
             var qtd = parseInt($(this).attr('qtd'));
@@ -33,6 +34,7 @@ function updateTotal() {
             }
                 valor = (porKm * qtd) + valor;
         } else if(this.classList.contains('calcQtdKit')) {
+            console.log('aqui2');
             var valor = parseInt(this.value);
             console.log(valor);
             var qtd = parseInt($(this).attr('qtd'));
@@ -40,11 +42,21 @@ function updateTotal() {
             if (isNaN(qtd)) {
                 qtd = 1;
             }
-
             valor = qtd * valor;
             total['kitReparo'] += parseInt(valor);
-        } else  if (this.classList.contains('tunning')) {
-            total['tunning'] += parseInt(valor);
+        }
+
+          if (this.classList.contains('tunning')) {
+                var valor = parseInt(this.value);
+            if (this.classList.contains('calcQtd')) {
+                var qtd = parseInt($(this).attr('qtd'));
+
+                if (isNaN(qtd)) {
+                    qtd = 1;
+                }
+                valor = qtd * valor;
+            }
+            total['tunning'] += valor
         } else {
             total['reparo'] += parseInt(valor);
         }
