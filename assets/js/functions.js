@@ -25,7 +25,6 @@ function updateTotal() {
             valor = this.value * qtd;
 
         } else if(this.classList.contains('calcQtdReparo')) {
-            console.log('aqui');
             var porKm = 1000;
             var valor = parseInt(this.value);
             var qtd = parseInt($(this).attr('qtd'));
