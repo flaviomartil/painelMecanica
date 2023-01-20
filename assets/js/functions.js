@@ -13,6 +13,7 @@ function updateTotal() {
     $("input:checkbox[name=value]:checked").each(function () {
         var valor = this.value;
         var qtd =  1;
+
         if (this.classList.contains('calcQtd')) {
             var valor = parseInt(this.value);
             var qtd = parseInt($(this).attr('qtd'));
@@ -24,7 +25,7 @@ function updateTotal() {
             valor = this.value * qtd;
 
         } else if(this.classList.contains('calcQtdReparo')) {
-            console.log('aqui1');
+            console.log('aqui');
             var porKm = 1000;
             var valor = parseInt(this.value);
             var qtd = parseInt($(this).attr('qtd'));
@@ -33,10 +34,9 @@ function updateTotal() {
                 qtd = 1;
             }
                 valor = (porKm * qtd) + valor;
+            total['reparo'] += valor;
         } else if(this.classList.contains('calcQtdKit')) {
-            console.log('aqui2');
             var valor = parseInt(this.value);
-            console.log(valor);
             var qtd = parseInt($(this).attr('qtd'));
 
             if (isNaN(qtd)) {
@@ -44,10 +44,9 @@ function updateTotal() {
             }
             valor = qtd * valor;
             total['kitReparo'] += parseInt(valor);
-        }
+        } else if (this.classList.contains('tunning')) {
+            var valor = parseInt(this.value);
 
-          if (this.classList.contains('tunning')) {
-                var valor = parseInt(this.value);
             if (this.classList.contains('calcQtd')) {
                 var qtd = parseInt($(this).attr('qtd'));
 
@@ -57,8 +56,6 @@ function updateTotal() {
                 valor = qtd * valor;
             }
             total['tunning'] += valor
-        } else {
-            total['reparo'] += parseInt(valor);
         }
 
         if (this.classList.contains('desconto5') || this.classList.contains('desconto10')) {
@@ -76,6 +73,7 @@ function updateTotal() {
 }
 
 $(function() {
+    $('#aviso').modal('toggle');
 
     $('.qtd').on('change', function(el) {
         var checkbox = $(el.target).parent().find('.calcQtd');
@@ -85,6 +83,12 @@ $(function() {
             if (!checkbox[0]) {
                 checkbox.attr('qtd',this.value);
             }
+
+            if (!checkbox[0]) {
+        checkbox = $(el.target).parent().find('.calcQtdReparo');
+                checkbox.attr('qtd',this.value);
+            }
+
 
             checkbox.attr('qtd',this.value);
         }
@@ -114,11 +118,11 @@ $(function() {
         const data = new Date();
         let dia = data.getDate();
         let mes = data.getMonth() + 1;
-        let vendasDia = dia + '/' + mes;
-        let vendasTunning = dia + '/' + mes + 'tunning';
-        let vendasReparo = dia + '/' + mes + 'reparo';
-        let vendasKit= dia + '/' + mes + 'kitReparo';
-        let vendasDesconto = dia + '/' + mes + 'descontos';
+        let vendasDia = 'total';
+        let vendasTunning = 'tunning';
+        let vendasReparo = 'reparo';
+        let vendasKit= 'kitReparo';
+        let vendasDesconto = 'descontos';
         var getItens = JSON.parse(localStorage.getItem(vendasDia));
         var getItensTunning = JSON.parse(localStorage.getItem(vendasTunning));
         var getItensReparo = JSON.parse(localStorage.getItem(vendasReparo));
@@ -186,11 +190,11 @@ $(function() {
         const data = new Date();
         let dia = data.getDate();
         let mes = data.getMonth() + 1;
-        let vendasDia = dia + '/' + mes;
-        let vendasTunning = dia + '/' + mes + 'tunning';
-        let vendasReparo = dia + '/' + mes + 'reparo';
-        let vendasKit= dia + '/' + mes + 'kitReparo';
-        let descontos = dia + '/' + mes + 'descontos';
+        let vendasDia = 'total'
+        let vendasTunning = 'tunning';
+        let vendasReparo = 'reparo';
+        let vendasKit= 'kitReparo';
+        let descontos = 'descontos';
 
         var mydatas = [];
         mydatas['total'] = [];
